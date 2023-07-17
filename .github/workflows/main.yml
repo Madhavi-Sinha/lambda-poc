@@ -38,9 +38,10 @@ jobs:
          
        - name: AWS Deploy
          run: |
-             zip -r9 check.zip demo/first.py |
+             cd demo/
+             zip -r9 check.zip first.py |
 
-             aws lambda update-function-code --function-name lambda-github-function --zip-file check.zip
+             aws lambda update-function-code --function-name lambda-github-function --zip-file demo://check.zip
              
         
             
