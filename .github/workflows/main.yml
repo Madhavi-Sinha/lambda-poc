@@ -1,1 +1,11 @@
+name: Deploy Lambda Function
+on:
+ push:
+  branches: [ test ]
 
+jobs:
+ release:
+  name: Deploy lambda function
+  runs-on: [ ubuntu-latest]
+  
+     
