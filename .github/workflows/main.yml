@@ -15,7 +15,8 @@ jobs:
          
        - name: ZIP FILES
          run: |
-            zip check.zip demo/*
+            cd demo/ 
+            zip -r9 check.zip first.py
   
   
      
