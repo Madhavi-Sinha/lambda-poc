@@ -8,9 +8,17 @@ on:
   branches: [ test ]
 
 jobs:
-  build:
+ deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    defaults:
+      run:
+        shell: bash
     steps:
+    
+    
        - name: Checkout
          uses: actions/checkout@v3
         
