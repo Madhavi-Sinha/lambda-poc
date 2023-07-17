@@ -15,7 +15,7 @@ jobs:
          
        - name: ZIP FILES
          run: |
-            zip -r9 check.zip demo/*
+            zip check.zip demo/*
   
   
      
