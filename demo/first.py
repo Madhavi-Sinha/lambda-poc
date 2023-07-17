@@ -1,1 +1,1 @@
-print("Hello world...THIS IS LAMBDA")
+print("Hello world...THIS IS LAMBDA FUNCTION")
