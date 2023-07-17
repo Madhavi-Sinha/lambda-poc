@@ -28,20 +28,16 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE }}  
           aws-region: ${{ secrets.AWS_REGION }} 
          
-       - name: ZIP FILES
-         run: |
+          name: AWS Deploy
+          run: |
             cd demo/ 
-            zip -r9 check.zip first.py
+            zip -r9 check.zip first.py 
+            aws lambda update-function-code --function-name lambda-github-function --zip-file fileb://check.zip
             pwd
-       - name : Upload artifact
-         uses: actions/upload-artifact@v1
-         with: 
-            name : testzip
-            path : demo
+        
             
-       - name : AWS Deploy
-         run: |
-          aws lambda update-function-code --function-name lambda-github-function --zip-file fileb://check.zip
+        
+          
           
   
      
