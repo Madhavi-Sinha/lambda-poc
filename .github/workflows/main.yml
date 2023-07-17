@@ -12,11 +12,16 @@ jobs:
     steps:
        - name: Checkout
          uses: actions/checkout@v3
+        
+       - name: Configure AWS Credentials
+         uses: aws-actions/configure-aws-credentials@v1
+         with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}  
+          aws-region: ${{ secrets.AWS_REGION }} 
          
        - name: ZIP FILES
          run: |
             cd demo/ 
-            pwd
             zip -r9 check.zip first.py
             pwd
        - name : Upload artifact
@@ -24,6 +29,10 @@ jobs:
          with: 
             name : testzip
             path : demo
+            
+       - name : AWS Deploy
+         run: |
+          aws lambda update-function-code --function-name lambda-github-function --zip-file fileb://check.zip
           
   
      
