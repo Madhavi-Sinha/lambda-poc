@@ -16,7 +16,9 @@ jobs:
        - name: ZIP FILES
          run: |
             cd demo/ 
+            pwd
             zip -r9 check.zip first.py
+            pwd
   
   
      
