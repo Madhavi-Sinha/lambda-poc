@@ -41,7 +41,7 @@ jobs:
              cd demo/
              zip -r9 check.zip first.py |
 
-             aws lambda update-function-code --function-name lambda-github-function --zip-file demo://check.zip
+             aws lambda update-function-code --function-name lambda-github-function --zip-file fileb://demo/check.zip
              
         
             
