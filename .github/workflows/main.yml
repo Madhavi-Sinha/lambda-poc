@@ -28,10 +28,10 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE }}  
           aws-region: ${{ secrets.AWS_REGION }} 
          
-          name: AWS Deploy
-          run: |
-            cd demo/ 
-            zip -r9 check.zip first.py 
+       - name: AWS Deploy
+         run: |
+            cd demo/ | 
+            zip -r9 check.zip first.py |
             aws lambda update-function-code --function-name lambda-github-function --zip-file fileb://check.zip
             pwd
         
