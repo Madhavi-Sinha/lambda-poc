@@ -27,9 +27,17 @@ jobs:
          with:
           role-to-assume: ${{ secrets.AWS_ROLE }}  
           aws-region: ${{ secrets.AWS_REGION }} 
+          
+          
+       - uses: actions/setup-node@v2
+         with:
+          node-version: "14"
+  
+       - name: Checkout
+         uses: actions/checkout@v3
          
-      # - name: AWS Deploy
-          run: |
+       - name: AWS Deploy
+         run: |
              cd demo/ | 
              zip -r9 check.zip first.py |
              aws lambda update-function-code --function-name lambda-github-function --zip-file fileb://check.zip
