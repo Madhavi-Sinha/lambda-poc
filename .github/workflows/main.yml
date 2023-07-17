@@ -19,6 +19,11 @@ jobs:
             pwd
             zip -r9 check.zip first.py
             pwd
-  
+       - name : Upload artifact
+         uses: actions/upload-artifact@v1
+         with: 
+            name : testzip
+            path : lambda-poc/lambda-poc/demo
+          
   
      
