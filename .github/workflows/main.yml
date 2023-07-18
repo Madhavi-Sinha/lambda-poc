@@ -26,5 +26,5 @@ jobs:
        - name: unzip file
          run: |
            cd dir/
-           unzip ../testzip.zip
+           unzip ../testzip.zip -d dir
 
