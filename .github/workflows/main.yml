@@ -9,6 +9,8 @@ on:
 jobs:
  deploy:
     runs-on: ubuntu-latest
+    env:
+       working-directory: dir
     permissions:
       id-token: write
       contents: read
@@ -23,5 +25,6 @@ jobs:
          
        - name: unzip file
          run: |
-           unzip testzip.zip
+           cd dir/
+           unzip ../testzip.zip
 
