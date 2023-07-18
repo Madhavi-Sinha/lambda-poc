@@ -45,7 +45,7 @@ jobs:
              zip -r9 check.zip * |
 
              aws lambda update-function-code --function-name lambda-github-function --zip-file fileb://check.zip
-             aws lambda publish-version --function-name lambda-github-function             
+                        
         
             
         
